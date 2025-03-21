@@ -10,6 +10,8 @@
 goal_loc를 어쨌든 도착점이다.
 
 """
+n = int(input())
+print(pow(2,n)-1)
 
 result = 0
 
@@ -17,12 +19,12 @@ def search(n, start_loc, goal_loc, empty_loc):
     global result
     if n == 1:
         result += 1
-        print(f"{start_loc} -> {goal_loc}")
+        print(f"{start_loc} {goal_loc}")
         return
 
     search(n - 1, start_loc, empty_loc, goal_loc)
     search(1, start_loc, goal_loc, empty_loc)
     search(n-1,empty_loc,goal_loc,start_loc)
 
-search(3, 1, 3,2)
-print(result)
+if n <= 20:
+    search(n, 1, 3,2)

@@ -16,7 +16,7 @@ row = [0] * n
 
 def is_promising(x):
     for i in range(x):
-        if row[x] == row[i] or abs(row[x] - row[i]) == abs(x - i):
+        if row[x] == row[i] or (row[x] + x == row[i] + i) or (abs(row[x] - row[i]) == abs(x - i)):
             return False
     return True
 
